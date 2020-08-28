@@ -32,7 +32,7 @@ pipeline {
                 sh '''
                     eval `ssh-agent -s` && ssh-add
                     if ! grep "$(ssh-keyscan github.com 2>/dev/null)" ~/.ssh/known_hosts > /dev/null; then ssh-keyscan github.com >> ~/.ssh/known_hosts; fi
-                    git remote set-url origin-ssh git@github.com:WillGibson/jenkins-workshop.git || git remote add origin-ssh git@github.com:WillGibson/jenkins-workshop.git
+                    git remote set-url origin-ssh git@github.com:aerodigi/jenkins-workshop.git || git remote add origin-ssh git@github.com:aerodigi/jenkins-workshop.git
                     git fetch --all
                     git checkout master
                     git pull
